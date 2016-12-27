@@ -2,16 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.springframework.integration.samples</groupId>
-  <artifactId>dynamic-ftp</artifactId>
-  <version>5.0.0.BUILD-SNAPSHOT</version>
-  <name>Dynamic FTP Demo</name>
-  <description>Dynamic FTP Demo</description>
-  <url>http://projects.spring.io/spring-integration</url>
-  <organization>
-    <name>SpringIO</name>
-    <url>https://spring.io</url>
-  </organization>
+  <groupId>com.github.exper0</groupId>
+  <artifactId>EFileCopier</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>EFileCopier</name>
+  <description>Enterprise File Copier</description>
+  <url>https://github.com/exper0/EFileCopier</url>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -21,36 +17,18 @@
   </licenses>
   <developers>
     <developer>
-      <id>garyrussell</id>
-      <name>Gary Russell</name>
-      <email>grussell@pivotal.io</email>
+      <id>exper0</id>
+      <name>Andrei Eliseev</name>
+      <email>aeg.exper0@gmail.com</email>
       <roles>
-        <role>project lead</role>
+        <role>project founder</role>
       </roles>
-    </developer>
-    <developer>
-      <id>markfisher</id>
-      <name>Mark Fisher</name>
-      <email>mfisher@pivotal.io</email>
-      <roles>
-        <role>project founder and lead emeritus</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>ghillert</id>
-      <name>Gunnar Hillert</name>
-      <email>ghillert@pivotal.io</email>
-    </developer>
-    <developer>
-      <id>abilan</id>
-      <name>Artem Bilan</name>
-      <email>abilan@pivotal.io</email>
     </developer>
   </developers>
   <scm>
-    <connection>scm:git:scm:git:git://github.com/spring-projects/spring-integration-samples.git</connection>
-    <developerConnection>scm:git:scm:git:ssh://git@github.com:spring-projects/spring-integration-samples.git</developerConnection>
-    <url>https://github.com/spring-projects/spring-integration-samples</url>
+    <connection>scm:git:scm:git:git://github.com/exper0/EFileCopier.git</connection>
+    <developerConnection>scm:git:scm:git:ssh://git@github.com:exper0/EFileCopier.git</developerConnection>
+    <url>https://github.com/exper0/EFileCopier</url>
   </scm>
   <dependencies>
     <dependency>
