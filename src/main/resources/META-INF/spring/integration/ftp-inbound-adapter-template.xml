@@ -11,13 +11,17 @@
 
 	<context:property-placeholder />
 
-	<bean id="sessionHolder" class="org.springframework.integration.samples.ftp.SessionHolder"/>
+	<int:channel id="ftpChannel">
+        <int:queue/>
+    </int:channel>
 
-	<int:channel id="toFtpChannel"/>
-
-	<int-ftp:outbound-channel-adapter id="ftpOutbound"
-				channel="toFtpChannel"
-				remote-directory="${remote.directory}"
-				session-factory="ftpClientFactory"/>
+	<int-ftp:inbound-channel-adapter
+            session-factory="${session.factory}"
+            channel="ftpChannel"
+            local-directory="${local.directory}"
+            auto-create-local-directory="true"
+            delete-remote-files="false">
+        <int:poller fixed-rate="1000"/>
+    </int-ftp:inbound-channel-adapter>
 
 </beans>

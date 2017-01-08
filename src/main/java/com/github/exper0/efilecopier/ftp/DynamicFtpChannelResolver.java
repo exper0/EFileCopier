@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.integration.samples.ftp;
+package com.github.exper0.efilecopier.ftp;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -100,7 +100,7 @@ public class DynamicFtpChannelResolver {
 	private synchronized MessageChannel createNewCustomerChannel(String customer) {
 		MessageChannel channel = this.channels.get(customer);
 		if (channel == null) {
-		    RemoteServerSettings settings = new RemoteServerSettings();
+		    ReportSettings settings = new ReportSettings();
 		    settings.setPassword("demo");
 		    settings.setUser("demo");
 		    settings.setHost("localhost");
@@ -138,7 +138,7 @@ public class DynamicFtpChannelResolver {
 		ctx.setEnvironment(env);
 	}
 
-    private AbstractApplicationContext getContext(RemoteServerSettings settings) {
+    private AbstractApplicationContext getContext(ReportSettings settings) {
 	    final String key = String.format("%s:%d", settings.getHost(), settings.getPort());
         AbstractApplicationContext context = roots.get(key);
         if (context == null) {

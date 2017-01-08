@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.integration.samples.ftp;
+package com.github.exper0.efilecopier.ftp;
 
-import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.InputStream;
-import java.net.UnknownHostException;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
@@ -35,7 +33,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.MessagingException;
 
 /**
  * @author Gary Russell

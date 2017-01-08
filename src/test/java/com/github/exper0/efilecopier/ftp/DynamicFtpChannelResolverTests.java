@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.integration.samples.ftp;
+package com.github.exper0.efilecopier.ftp;
 
 import static org.junit.Assert.*;
 
@@ -28,7 +28,7 @@ import org.springframework.messaging.MessageChannel;
 public class DynamicFtpChannelResolverTests {
 
 	/**
-	 * Test method for {@link org.springframework.integration.samples.ftp.DynamicFtpChannelResolver#resolve(java.lang.String)}.
+	 * Test method for {@link DynamicFtpChannelResolver#resolve(java.lang.String)}.
 	 */
 	@Test
 	public void testResolve() {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.integration.samples.ftp;
+package com.github.exper0.efilecopier.ftp;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.ftpserver.FtpServer;
@@ -28,7 +28,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.integration.samples.ftp.support.TestUserManager;
+import com.github.exper0.efilecopier.ftp.support.TestUserManager;
 import org.springframework.integration.test.util.SocketUtils;
 
 import java.io.File;
@@ -45,7 +45,7 @@ import java.net.SocketException;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-		   FtpOutboundChannelAdapterSample.class
+		   FtpInboundChannelAdapterSample.class
 	   })
 public class TestSuite {
 
