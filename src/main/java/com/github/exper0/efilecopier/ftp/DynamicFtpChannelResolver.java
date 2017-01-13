@@ -100,7 +100,7 @@ public class DynamicFtpChannelResolver {
 	private synchronized MessageChannel createNewCustomerChannel(String customer) {
 		MessageChannel channel = this.channels.get(customer);
 		if (channel == null) {
-		    ReportSettings settings = new ReportSettings();
+		    ReportSettings settings = new FtpReportSettings();
 		    settings.setPassword("demo");
 		    settings.setUser("demo");
 		    settings.setHost("localhost");

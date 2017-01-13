@@ -39,22 +39,19 @@ public class FtpInboundChannelAdapterSample {
 
 	@Test
 	public void runDemo() throws Exception{
-//		ConfigurableApplicationContext ctx =
-//			new ClassPathXmlApplicationContext("META-INF/spring/integration/FtpInboundChannelAdapterSample-context.xml");
-//
-        try (FtpAdapterFactory resolver = new FtpAdapterFactory()) {
-            Files.copy(this.getClass().getResourceAsStream("/test-files/a.txt"), Paths.get(TestSuite.FTP_ROOT_DIR, "a.txt"));
-            Files.copy(this.getClass().getResourceAsStream("/test-files/b.txt"), Paths.get(TestSuite.FTP_ROOT_DIR, "b.txt"));
-            ReportSettings settings = new ReportSettings();
-            settings.setPort(4444);
-            settings.setHost("localhost");
-            settings.setLocalDir(LOCAL_FTP_TEMP_DIR + "/ftpInbound");
-            settings.setRemoteDir("/");
-            settings.setUser("demo");
-            settings.setPassword("demo");
-            PollableChannel ftpChannel = resolver.resolve(settings);
-
-
+        Files.copy(this.getClass().getResourceAsStream("/test-files/a.txt"), Paths.get(TestSuite.FTP_ROOT_DIR, "a.txt"));
+        Files.copy(this.getClass().getResourceAsStream("/test-files/b.txt"), Paths.get(TestSuite.FTP_ROOT_DIR, "b.txt"));
+        FtpReportSettings settings = new FtpReportSettings();
+        settings.setPort(4444);
+        settings.setHost("localhost");
+        settings.setLocalDir(LOCAL_FTP_TEMP_DIR + "/ftpInbound");
+        settings.setRemoteDir("/");
+        settings.setUser("demo");
+        settings.setPassword("demo");
+        FtpAdapterFactory factory = new FtpAdapterFactory();
+        try (FileAdapter adapter = factory.createAdapter(settings)) {
+            adapter.activate();
+            PollableChannel ftpChannel = adapter.channel();
             Message<?> message1 = ftpChannel.receive(2000);
             Message<?> message2 = ftpChannel.receive(2000);
             Message<?> message3 = ftpChannel.receive(1000);
